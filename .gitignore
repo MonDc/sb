@@ -2,4 +2,4 @@ docs.txt
 predictedErrors.txt
 node_modules/
 queries.sql
-.env
+# .env
