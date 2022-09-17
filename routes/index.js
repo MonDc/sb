@@ -10,9 +10,12 @@ router.get('/', function (req, res, next) {
 
 /* POST message. */
 router.route('/').post((req, res) => {
-  indexController.insertMessage(req.body.iyMessage, 1, new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''), new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')).then(data => {
+  indexController.insertMessage(req.body.iyMessage, 1, new Date().toLocaleString("sv", { timeZone: "Europe/Paris" }), new Date().toLocaleString("sv", { timeZone: "Europe/Paris" })).then(data => {
     console.log(data);
     res.render('index', { title: 'post' });
+
+  }).catch(error => {
+    res.send(error)
   })
 });
 
