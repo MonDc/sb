@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <title>
+
+  </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <nav class="bg-color">Jasmin tabs</nav>
+
+  <section class="wrapper">
+    <ul class="tabs">
+      <li class="active">18</li>
+      <li>Favorite movies</li>
+      <li>New Box</li>
+    </ul>
+
+    <ul class="tab__content">
+      <li class="active">
+        <div class="content__wrapper">
+          <h2 class="text-color">Brave IY, Proud of YOU!</h2>
+
+
+          <ul class="colors">
+            <li data-color="#2ecc71"></li>
+            <li data-color="#D64A4B"></li>
+            <li data-color="#8e44ad"></li>
+            <li class="active-color" data-color="#46a1de"></li>
+            <li data-color="#bdc3c7"></li>
+          </ul>
+
+          <div class="mb-5 mt-5">
+            <ul class="list-group">
+              <% for(var i=0; i < processedTsMessage.length; i++) {%>
+                <li class="list-group-item list-group-item-info small py-2 text-dark">
+                  <div class="pb-0">
+                    <span class="badge badge-info">
+                      <%= processedTsMessage[i].date %>
+                    </span>
+                    <span class="badge badge-info">
+                      <%= processedTsMessage[i].time %>
+                    </span>
+                  </div>
+                  <%= processedTsMessage[i].message %>
+                </li>
+                <%}%>
+            </ul>
+          </div>
+        </div>
+
+      </li>
+      <li>
+        <div class="content__wrapper">
+          <h2 class="text-color">Coming soon</h2>
+
+          <img src="">
+        </div>
+      </li>
+      <li>
+        <div class="content__wrapper">
+          <h2 class="text-color">This place will change every time</h2>
+
+          <p>Link <a class="text-color" href="#" target="_blank">This is changing</a></p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>Jasmin</footer>
+  <script>
+    document.body.style.background = "#727a62";
+    // This will remain from 18 to exactly 19
+    var achtzehn = new Date().getHours();
+    console.log(achtzehn);
+    if (achtzehn >= 18 && achtzehn <= 18) {
+      document.getElementsByClassName('secret-area')[0].style.display = 'inline-block';
+    } else {
+      document.getElementsByClassName('secret-area')[0].style.display = 'none';
+
+    }
+
+  </script>
+
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>
