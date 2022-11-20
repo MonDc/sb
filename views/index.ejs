@@ -15,12 +15,12 @@
 </head>
 
 <body>
-  <nav class="bg-color">Jasmin tabs</nav>
+  <nav class="bg-color">Yasmeen tabs</nav>
 
   <section class="wrapper">
     <ul class="tabs">
-      <li class="active">18</li>
-      <li>Favorite movies</li>
+      <li class="active">Seite 18</li>
+      <li>Growing up</li>
       <li>New Box</li>
     </ul>
 
@@ -66,15 +66,45 @@
       </li>
       <li>
         <div class="content__wrapper">
-          <h2 class="text-color">Coming soon</h2>
+          <h2 class="text-color">Who Am I?</h2>
+          <p>
+            Based on my age, check (Bin ich selbständig?), Bin ich komplet eigenverantwortlich?
+          <p>Kann ich alles machen was ich will?</p>
+          </p>
 
-          <img src="">
+          <div class="my-4 mb-3">
+            <h4 class="text-muted">Selbständigkeit</h4>
+          </div>
+          <div class="progress">
+            <div class="progress-bar selbstaendig" role="progressbar" style="width: 25%;" aria-valuenow="25"
+              aria-valuemin="0" aria-valuemax="100">10%</div>
+          </div>
+
+          <div class="btn-selbstaendig mt-4">
+            <button type="button" class="btn btn-success btn-sev">At age 7</button>
+            <button type="button" class="btn btn-success btn-now">Now</button>
+            <button type="button" class="btn btn-success btn-16">At age 16</button>
+          </div>
+
+
+          <hr>
+
+          <div class="my-4 mb-3">
+            <h4 class="text-muted">My age in days.</h4>
+          </div>
+          <div class="btn-selbstaendig mt-4">
+            <button type="button" class="btn btn-success btn-age-days">Check it</button>
+          </div>
+          <div class="btn-selbstaendig mt-2 pb-5">
+            <input type="hidden" class="btn btn-primary btn-age-show" />
+          </div>
+
+
         </div>
       </li>
       <li>
         <div class="content__wrapper">
           <h2 class="text-color">This place will change every time</h2>
-
           <p>Link <a class="text-color" href="#" target="_blank">This is changing</a></p>
         </div>
       </li>
@@ -93,6 +123,268 @@
       document.getElementsByClassName('secret-area')[0].style.display = 'none';
 
     }
+
+    $(document).ready(function () {
+      // $('.progress-bar').css('width', '70%');
+
+
+
+      // starting selbstaendigkeit coding
+      const minki = 2011;
+      const yearEleven = 365;
+
+      // How many days have gone already in this year
+      var now = new Date();
+      var start = new Date(now.getFullYear(), 0, 0);
+      console.log(start)
+      var diff = now - start;
+      var oneDay = 1000 * 60 * 60 * 24;
+      var day = Math.floor(diff / oneDay);
+      console.log('Days of year until this point is: ' + day);
+
+
+
+      // How many days have gone already in the year Minki was born
+      const event = new Date('November 08, 2011 21:15:30');
+      var anfang = new Date(event.getFullYear(), 0, 0);
+      var dif = event - anfang;
+      var onlyDay = 1000 * 60 * 60 * 24;
+      var numDay = Math.floor(dif / onlyDay); // 312
+      var numRemainsFromEleven = yearEleven - numDay
+      console.log('........................................................')
+
+      // Calculatin the leap years for the count to be pricise (From 2012 till now) 
+      console.log('Calculating leap years');
+      let sum = 0;
+      let currentYear = new Date().getFullYear();
+      for (let i = 2012; i < currentYear; i++) {
+
+        // Find the leap years 366
+        let leap = i % 4 === 0 ? 366 : 365;
+
+        console.log(leap);
+        sum = sum + leap;
+
+      }
+      var sumOfAllFullYearsDays = sum;
+      console.log(sumOfAllFullYearsDays);
+
+      console.log('........................................................')
+
+
+
+
+
+      console.log('........................................................')
+
+
+      // Calculatin the leap years for the count to be pricise (From Minki for 100 Years) 
+      console.log('Calculating 100 years from 08.11.2011');
+
+      let sumH = 0;
+      let currentYearH = 2111;
+      for (let i = 2011; i < currentYearH; i++) {
+        // Find the leap years 366
+        let leapH = i % 4 === 0 ? 366 : 365;
+
+        console.log(leapH);
+        sumH = sumH + leapH;
+
+      }
+      var sumOfAllFullYearsDaysH = sumH;
+      console.log(sumOfAllFullYearsDaysH);
+
+      console.log('........................................................')
+
+
+
+      console.log('........................................................')
+
+
+      // Calculatin the leap years for the count to be pricise (From Minki for 25 Years) 
+      console.log('Calculating 25 years from 08.11.2011');
+      let sumTf = 0;
+      let currentYearTf = 2036;
+      for (let i = 2011; i < currentYearTf; i++) {
+
+        // Find the leap years 366
+        let leapTf = i % 4 === 0 ? 366 : 365;
+
+
+        console.log(leapTf);
+        sumTf = sumTf + leapTf;
+
+      }
+      console.log('........................................................')
+      console.log('All in days!')
+      var sumOfAllFullYearsDaysTf = sumTf;
+      console.log(sumOfAllFullYearsDaysTf);
+      console.log('........................................................')
+
+
+
+
+
+
+      console.log('........................................................')
+
+      // Calculatin the leap years for the count to be pricise (From Minki for 20 Years) 
+      console.log('Calculating 20 years from 08.11.2011');
+      let sumT = 0;
+      let currentYearT = 2031;
+      for (let i = 2011; i < currentYearT; i++) {
+        let leapT = i % 4 === 0 ? 366 : 365;
+        console.log(leapT);
+        sumT = sumT + leapT;
+      }
+      console.log('........................................................')
+      console.log('All in days!')
+      var sumOfAllFullYearsDaysT = sumT;
+      console.log(sumOfAllFullYearsDaysT);
+      console.log('........................................................')
+
+
+
+
+
+      console.log('........................................................')
+
+      // Calculatin the leap years for the count to be pricise (From Minki for 18 Years) 
+      console.log('Calculating 18 years from 08.11.2011');
+      let sumE = 0;
+      let currentYearE = 2029;
+      for (let i = 2011; i < currentYearE; i++) {
+        let leapE = i % 4 === 0 ? 366 : 365;
+        console.log(leapE);
+        sumE = sumE + leapE;
+      }
+      console.log('........................................................')
+      console.log('All in days! sumE')
+      var sumOfAllFullYearsDaysE = sumE;
+      console.log(sumOfAllFullYearsDaysE);
+      console.log('........................................................')
+
+
+
+
+
+      console.log('........................................................')
+
+      // Calculatin the leap years for the count to be pricise (From Minki for 16 Years) 
+      console.log('Calculating 18 years from 08.11.2011');
+      let sumS = 0;
+      let currentYearS = 2027;
+      for (let i = 2011; i < currentYearS; i++) {
+        let leapS = i % 4 === 0 ? 366 : 365;
+        console.log(leapS);
+        sumS = sumS + leapS;
+      }
+      console.log('........................................................')
+      console.log('All in days! sumS')
+      var sumOfAllFullYearsDaysS = sumS;
+      console.log(sumOfAllFullYearsDaysS);
+      console.log('........................................................')
+
+
+
+
+      console.log('........................................................')
+
+      // Calculatin the leap years for the count to be pricise (From Minki for 7 Years) 
+      console.log('Calculating 18 years from 08.11.2011');
+      let sumSev = 0;
+      let currentYearSev = 2018;
+      for (let i = 2011; i < currentYearSev; i++) {
+        let leapSev = i % 4 === 0 ? 366 : 365;
+        console.log(leapSev);
+        sumSev = sumSev + leapSev;
+      }
+      console.log('........................................................')
+      console.log('All in days! sumS')
+      var sumOfAllFullYearsDaysSev = sumSev;
+      console.log(sumOfAllFullYearsDaysSev);
+      console.log('........................................................')
+
+
+
+
+
+      // Calculating Minki age in Days) 
+      var sumAllDays = sumOfAllFullYearsDays + numRemainsFromEleven;
+      console.log('All Days of Minki age without current year!')
+      console.log(sumOfAllFullYearsDays);
+      console.log('........................................................')
+      console.log('........................................................')
+
+      console.log('All Minki age in Days');
+      let minkyAgeInDays = sumAllDays + day
+      console.log(minkyAgeInDays);
+
+
+
+
+
+
+
+      console.log('........................................................')
+
+
+      /// Anfang code
+      let eighteen = 80; // This is the maximum, however it is chaning during increasing age until 80 is reached.
+
+      let currentWidth = ((minkyAgeInDays * eighteen) / sumOfAllFullYearsDaysE).toFixed(2);
+      console.log(currentWidth)
+
+      // This time point while the age is 4029 (11 Years), the current width will be saved hier in this variable 
+      let widthLockedAtThisTimepint = 49.02 // (This is the exact number at (19.11.2022));
+
+
+
+
+
+
+      // $('.selbstaendig').css('width', currentWidth + '%')
+      $('.selbstaendig').text(currentWidth + '%');
+      $('.selbstaendig').animate({ width: currentWidth + '%' }, 3000, 'linear');
+
+
+
+
+
+      $('.btn-16').on('click', function () {
+        let thenWidthS = ((sumOfAllFullYearsDaysS * eighteen) / sumOfAllFullYearsDaysE).toFixed(2);
+
+        $('.selbstaendig').animate({ width: thenWidthS + '%' }, 3000, 'linear');
+        $('.selbstaendig').text(thenWidthS + '%');
+      })
+      // Now (returning..)
+      $('.btn-now').on('click', function () {
+        let thenWidthNow = ((minkyAgeInDays * eighteen) / sumOfAllFullYearsDaysE).toFixed(2);
+
+        $('.selbstaendig').animate({ width: thenWidthNow + '%' }, 3000, 'linear');
+        $('.selbstaendig').text(thenWidthNow + '%');
+      })
+
+      // mit 7 Jahre..)
+      $('.btn-sev').on('click', function () {
+        let thenWidthSev = ((sumOfAllFullYearsDaysSev * eighteen) / sumOfAllFullYearsDaysE).toFixed(2);
+
+        $('.selbstaendig').animate({ width: thenWidthSev + '%' }, 3000, 'linear');
+        $('.selbstaendig').text(thenWidthSev + '%');
+      })
+
+
+      $('.btn-age-show').val(minkyAgeInDays)
+      $('.btn-age-days').on('click', function () {
+        $('.btn-age-show').prop('type', 'text');
+        console.log(minkyAgeInDays)
+      })
+
+
+
+      /// End Code
+
+    });
 
   </script>
 
